@@ -1,7 +1,7 @@
 #!/bin/bash
 
-read -p "Login github: "login
-read -p "Token: "Token
+read -p "Login github: " login
+read -p "Token: " token
 
 
 

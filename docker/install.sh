@@ -1,9 +1,22 @@
 #!/bin/bash
+
+read -p "Login github" login
+read -p "Token" Token
+
+
+
 echo "###INSTALAÇÃO DOCKER ###"
 apt purge docker-* -y
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo apt install docker-compose -y
+
+mkdir ../report-med
+cd ../report-med
+git clone https://$login:$token@github.com/mmarinhols/rmserver.git
+git clone https://$login:$token@github.com/mmarinhols/rmwebhook.git
+git clone https://$login:$token@github.com/mmarinhols/rmwhatsapp.git
+git clone https://$login:$token@github.com/mmarinhols/rmzapservice.git
 
 echo "###POTAINER###"
 docker-compose -f ../portainer/portainer.yaml up -d
@@ -11,11 +24,11 @@ docker-compose -f ../portainer/portainer.yaml up -d
 echo "###REPORT MED DATABASE###"
 docker-compose -f ../rmdatabase/rmdatabase.yaml up -d
 
-echo "###REPORT MED FTP###"
-docker-compose -f ../rmftp/rmftp.yaml up -d
+#echo "###REPORT MED FTP###"
+#docker-compose -f ../rmftp/rmftp.yaml up -d
 
-echo "###REPORT MED ORTHANC###"
-docker-compose -f ../rmorthanc/rmorthanc.yaml up -d
+#echo "###REPORT MED ORTHANC###"
+#docker-compose -f ../rmorthanc/rmorthanc.yaml up -d
 
 echo "###REPORT MED SERVER###"
 docker-compose -f ../rmserver/rmserver.yaml up -d

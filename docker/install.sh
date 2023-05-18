@@ -6,7 +6,8 @@ read -p "Token: " token
 
 
 echo "###INSTALAÇÃO DOCKER ###"
-apt purge docker-* -y
+apt purge docker -y
+apt autoremove -y
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo apt install build-essential docker-compose -y

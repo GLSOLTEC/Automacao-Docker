@@ -7,7 +7,7 @@ services:
       - "21:21"
       - "30000-30009:30000-30009"
     volumes:
-      - "/opt/report-med/ftp:/home/ftp/"
+      - "/opt/ftp:/home/ftp/"
     environment:
       PUBLICHOST: "localhost"
       FTP_USER_NAME: ftp

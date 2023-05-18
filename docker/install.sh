@@ -9,7 +9,7 @@ echo "###INSTALAÇÃO DOCKER ###"
 apt purge docker-* -y
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-sudo apt install docker-compose -y
+sudo apt install build-essential docker-compose -y
 cd ../
 git clone https://$login:$token@github.com/mmarinhols/rmserver.git
 git clone https://$login:$token@github.com/mmarinhols/rmwebhook.git

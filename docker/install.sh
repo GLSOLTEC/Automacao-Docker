@@ -16,7 +16,9 @@ git clone https://$login:$token@github.com/mmarinhols/rmwebhook.git
 git clone https://$login:$token@github.com/mmarinhols/rmwhatsapp.git
 git clone https://$login:$token@github.com/mmarinhols/rmzapservice.git
 
-echo "###POTAINER###"
+cd docker
+
+echo "###PORTAINER###"
 docker-compose -f ../portainer/portainer.yaml up -d
 
 echo "###REPORT MED DATABASE###"

@@ -11,8 +11,6 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo apt install docker-compose -y
 
-mkdir ../report-med
-cd ../report-med
 git clone https://$login:$token@github.com/mmarinhols/rmserver.git
 git clone https://$login:$token@github.com/mmarinhols/rmwebhook.git
 git clone https://$login:$token@github.com/mmarinhols/rmwhatsapp.git
